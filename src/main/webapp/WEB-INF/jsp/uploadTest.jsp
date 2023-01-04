@@ -7,14 +7,7 @@
 <title></title>
 </head>
 <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-1
-=======
 업로드와 병합을 테스트하자
->>>>>>> OSJ
-=======
-업로드와 병합을 테스트하자
->>>>>>> 440da4b1b04cb2eb312feae1bdabc4519ad82218
+ㅎㅇ
 </body>
 </html>
