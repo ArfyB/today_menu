@@ -7,7 +7,6 @@
 <title></title>
 </head>
 <body>
-업로드와 병합을 테스트하자
-ㅎㅇ
+안녕하세요
 </body>
 </html>
