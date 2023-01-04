@@ -7,6 +7,10 @@
 <title></title>
 </head>
 <body>
+<<<<<<< HEAD
 1
+=======
+업로드와 병합을 테스트하자
+>>>>>>> OSJ
 </body>
 </html>
