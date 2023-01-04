@@ -1,4 +1,4 @@
-package com.today.VO;
+package com.today.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
