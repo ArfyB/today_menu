@@ -7,6 +7,6 @@
 <title></title>
 </head>
 <body>
-1
+업로드와 병합을 테스트하자
 </body>
 </html>
