@@ -27,7 +27,8 @@ public class LoginController
     
     @RequestMapping("/login")
     public String login() {
-        return "thymeleaf/loginform";
+    	
+        return ".thymeleaf/loginform";
     }
     
     /*
