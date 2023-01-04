@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 @RequestMapping("/tm")
-public class LoginController 
+public class LoginController
 {
     @RequestMapping("/")
     @ResponseBody
@@ -31,6 +31,7 @@ public class LoginController
         return "thymeleaf/loginform";
     }
     
+    /*
     @PostMapping("/login")
     @ResponseBody
     public Map<String, Object> userid(String uid, HttpSession session)
@@ -38,7 +39,7 @@ public class LoginController
     	Map<String, Object> map = new HashMap<>();
     	session.setAttribute("uid", uid);
     	
-    	log.info((String)session.getAttribute("로그 : userid"));
+    	log.info((String)session.getAttribute("로그 : uid	"));
     	
     	map.put("uid", uid);
     	
@@ -49,5 +50,5 @@ public class LoginController
     public String chat(Locale locale, Model model) {
         return "thymeleaf/chat";
     }
-    
+    */
 }
