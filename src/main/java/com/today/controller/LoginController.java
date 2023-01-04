@@ -28,20 +28,19 @@ public class LoginController
     @RequestMapping("/login")
     public String login() {
     	
-        return ".thymeleaf/loginform";
+        return "thymeleaf/loginform";
     }
     
-    /*
     @PostMapping("/login")
     @ResponseBody
-    public Map<String, Object> userid(String userid, HttpSession session)
+    public Map<String, Object> userid(String uid, HttpSession session)
     {
     	Map<String, Object> map = new HashMap<>();
-    	session.setAttribute("userid", userid);
+    	session.setAttribute("uid", uid);
     	
     	log.info((String)session.getAttribute("로그 : userid"));
     	
-    	map.put("userid", userid);
+    	map.put("uid", uid);
     	
     	return map;
     }
@@ -50,6 +49,5 @@ public class LoginController
     public String chat(Locale locale, Model model) {
         return "thymeleaf/chat";
     }
-    */
     
 }
