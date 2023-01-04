@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+function changecategory()
+{
+	var category = $('#category').val();
+	
+	var a = "<select id='category'>"+
+	"<option value='FRU'>과일</option>"+
+	"<option value='VEG'>야채</option>"+
+	"<option value='RICE'>쌀</option>"+
+	"<option value='MEAT'>고기</option>"+
+	"<option value='FISH'>생선</option>"+
+	"<option value='WATER'>물</option>"+
+	"<option value='COFFEE'>커피</option>"+
+	"<option value='SNACK'>과자</option>"+
+	"<option value='RAMEN'>라면</option>"+
+	"<option value='DRA'>드레싱</option>"+
+	"<option value='SOURCE'>조미료</option>"+
+	"<option value='EGG'>계란</option>"+
+	"</select>";
+	
+	if(category=='name')
+	{
+		$('#find').html("<input type='text' name='name'>");
+	}
+	else if(category=='type')
+	{
+		$('#find').html(a);
+	}
+}
+</script>
+<body>
+
+<form>
+<div>
+<select id='category' name='category' onchange='changecategory()'>
+<option value='name'>이름</option>
+<option value='type'>종류</option>
+</select>
+<span id='find'><input type='text' name='name'></span>
+<button type='submit'>검색</button>
+</div>
+</form>
+
+
+
+<!-- 
+<div> 
+<span th:each="n : ${nums}">
+	[[${n}]]
+	</span>
+</div>
+-->
+</body>
+</html>
