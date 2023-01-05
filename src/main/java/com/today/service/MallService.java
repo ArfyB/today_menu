@@ -17,7 +17,6 @@ public class MallService
 	public List<Category> list()
 	{
 		List<Category> list = mapper.list();
-		
 		return list;
 	}
 }
