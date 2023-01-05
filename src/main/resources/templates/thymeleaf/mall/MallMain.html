@@ -7,6 +7,13 @@
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
+function MallDetail()
+{
+	
+}
+</script>
+<!-- 
+<script>
 function changecategory()
 {
 	var category = $('#category').val();
@@ -36,6 +43,7 @@ function changecategory()
 	}
 }
 </script>
+ -->
 <body>
 
 
@@ -66,10 +74,11 @@ function changecategory()
 </div>
 </form>
 <hr>
+
 <table><!-- 카테고리 표 -->
 <tr>
-<span th:each="n : ${list}">
-	<td>[[${n.name}]]</td>
+<span th:each="n : ${list}" id='category'>
+	<td><a th:href="@{'/mall/detail/'+${n.ca} }">[[${n.name}]]</a></td>
 </span>
 </tr>
 <tr>
@@ -80,7 +89,7 @@ function changecategory()
 </table>
 
 <hr>
-[[${list}]]
+
 <!-- 
 <div> 
 <span th:each="n : ${nums}">

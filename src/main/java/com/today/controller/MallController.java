@@ -3,7 +3,10 @@ package com.today.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.today.service.MallService;
 
@@ -21,9 +24,16 @@ public class MallController
     public String main(Model m) 
     {
     	//m.addAttribute("name","dlfma");
+    	m.addAttribute("list",svc.list());
         return "thymeleaf/mall/MallMain";
     }
     
+    @GetMapping("/detail/{ca}")
+    @ResponseBody
+    public String MallDetail(@PathVariable("ca")String ca)
+    {
+    	return ca;
+    }
     /*
     @PostMapping("/login")
     @ResponseBody
