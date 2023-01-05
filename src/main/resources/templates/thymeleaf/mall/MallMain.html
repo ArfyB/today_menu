@@ -38,19 +38,49 @@ function changecategory()
 </script>
 <body>
 
+
+<p>
+.
+<p>
+.
+
 <form>
-<div>
+
+<div><!-- 검색바 -->
 <select id='category' name='category' onchange='changecategory()'>
 <option value='name'>이름</option>
-<option value='type'>종류</option>
+<option value='VEG'>야채</option>
+<option value='RICE'>쌀</option>
+<option value='MEAT'>고기</option>
+<option value='FISH'>생선</option>
+<option value='WATER'>물</option>
+<option value='COFFEE'>커피</option>
+<option value='SNACK'>과자</option>
+<option value='RAMEN'>라면</option>
+<option value='DRA'>드레싱</option>
+<option value='SOURCE'>조미료</option>
+<option value='EGG'>계란</option>
 </select>
 <span id='find'><input type='text' name='name'></span>
 <button type='submit'>검색</button>
 </div>
 </form>
+<hr>
+<table><!-- 카테고리 표 -->
+<tr>
+<span th:each="n : ${list}">
+	<td>[[${n.name}]]</td>
+</span>
+</tr>
+<tr>
+<span th:each="n : ${list}">
+	<td>[[${n.ca}]]</td>
+</span>
+</tr>
+</table>
 
-
-
+<hr>
+[[${list}]]
 <!-- 
 <div> 
 <span th:each="n : ${nums}">
