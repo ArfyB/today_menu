@@ -14,9 +14,9 @@ public class MallService
 	@Autowired
 	public CategoryMapper mapper;
 	
-	public List<Category> list()
+	public List<Category> CategoryList()
 	{
-		List<Category> list = mapper.list();
+		List<Category> list = mapper.CategoryList();
 		return list;
 	}
 }

@@ -57,17 +57,9 @@ function changecategory()
 <div><!-- 검색바 -->
 <select id='category' name='category' onchange='changecategory()'>
 <option value='name'>이름</option>
-<option value='VEG'>야채</option>
-<option value='RICE'>쌀</option>
-<option value='MEAT'>고기</option>
-<option value='FISH'>생선</option>
-<option value='WATER'>물</option>
-<option value='COFFEE'>커피</option>
-<option value='SNACK'>과자</option>
-<option value='RAMEN'>라면</option>
-<option value='DRA'>드레싱</option>
-<option value='SOURCE'>조미료</option>
-<option value='EGG'>계란</option>
+<span th:each="n : ${list}">
+	<option>[[${n.name}]]</option>
+</span>
 </select>
 <span id='find'><input type='text' name='name'></span>
 <button type='submit'>검색</button>
@@ -83,13 +75,14 @@ function changecategory()
 </tr>
 <tr>
 <span th:each="n : ${list}">
+<!-- <a th:href="@{'/mall/detail/'+${n.ca} }"><img th:src="@{'/pics/'+${n.ca}+'.jpg'}"></a> -->
 	<td>[[${n.ca}]]</td>
 </span>
 </tr>
 </table>
 
 <hr>
-
+<!-- <img th:src="@{/pics/oren.gif}" width='500'> -->
 <!-- 
 <div> 
 <span th:each="n : ${nums}">

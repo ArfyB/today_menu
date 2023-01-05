@@ -9,5 +9,5 @@ import com.today.vo.Category;
 @Mapper
 public interface CategoryMapper 
 {
-	public List<Category> list();
+	public List<Category> CategoryList();
 }

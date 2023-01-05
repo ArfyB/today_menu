@@ -24,7 +24,7 @@ public class MallController
     public String main(Model m) 
     {
     	//m.addAttribute("name","dlfma");
-    	m.addAttribute("list",svc.list());
+    	m.addAttribute("list",svc.CategoryList());
         return "thymeleaf/mall/MallMain";
     }
     
