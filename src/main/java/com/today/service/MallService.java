@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.today.mapper.CategoryMapper;
 import com.today.vo.Category;
+import com.today.vo.Product;
 
 @Service
 public class MallService 
@@ -18,5 +19,11 @@ public class MallService
 	{
 		List<Category> list = mapper.CategoryList();
 		return list;
+	}
+	
+	public List<Product> plist()
+	{
+		List<Product> plist = mapper.ProductList();
+		return plist;
 	}
 }

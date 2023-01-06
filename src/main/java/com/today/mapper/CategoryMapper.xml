@@ -2,15 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         <mapper namespace="com.today.mapper.CategoryMapper">
-          <select id="CategoryList" 
+        
+          <select id="CategoryList"
        resultType="com.today.vo.Category">
         SELECT * FROM category
     	</select>
     	
+    	 <select id="ProductList"
+    	 parameterType="String"
+       resultType="com.today.vo.Product">
+       SELECT * FROM product WHERE type =  #{type}
+       </select>
+       
     	<select id="a"
     	>
 		SELECT * FROM category
 		</select>
+		
 </mapper>
 		
 <!--     	
