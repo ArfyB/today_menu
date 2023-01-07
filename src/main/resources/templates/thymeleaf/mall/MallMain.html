@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title></title>
 </head>
-
+<link rel="stylesheet" th:href="@{/css/MallMain.css}"/>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
 function MallDetail()
@@ -46,15 +46,7 @@ function changecategory()
  -->
 <body>
 
-
-<p>
-.
-<p>
-.
-a
-<form>
-
-<div><!-- 검색바 -->
+<div id="searchbar"><!-- 검색바 -->
 <select id='category' name='category' onchange='changecategory()'>
 <option value='name'>이름</option>
 <span th:each="n : ${list}">
@@ -67,7 +59,7 @@ a
 </form>
 <hr>
 
-<table><!-- 카테고리 표 -->
+<table id='nca'><!-- 카테고리 표 -->
 <tr>
 <span th:each="n : ${list}" id='category'>
 	<td><a th:href="@{'/mall/detail/'+${n.ca} }">[[${n.name}]]</a></td>
@@ -76,7 +68,7 @@ a
 <tr>
 <span th:each="n : ${list}">
 <!-- <a th:href="@{'/mall/detail/'+${n.ca} }"><img th:src="@{'/pics/'+${n.ca}+'.jpg'}"></a> -->
-	<td>[[${n.ca}]]</td>
+	<td>[[${n.name}]]</td>
 </span>
 </tr>
 </table>
