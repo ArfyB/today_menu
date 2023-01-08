@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main-bg {
+  /*배경 이미지 넣기*/
+  background: no-repeat;
+  background-image: url("../pics/main.png");
+  /* 전체페이지 비율에 꽉 맞게*/
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn1 {
+  background: none;
+  position: absolute;
+  top: 500px;
+  left: 30px;
+  border: none;
+  width: 400px;
+}
+
+.btn1:hover,
+.btn2:hover,
+.btn3:hover {
+  border: 5px solid greenyellow;
+  border-radius: 15px;
+}
+
+.btn2 {
+  background: none;
+  position: absolute;
+  top: 500px;
+  left: 570px;
+  border: none;
+  width: 400px;
+}
+.btn3 {
+  background: none;
+  position: absolute;
+  top: 500px;
+  right: 30px;
+  border: none;
+  width: 400px;
+}
+
+.flip-btn {
+  width: 200px;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  position: absolute;
+  right: 0px;
+}
+
+/*마우스를 올리면*/
+.flip-btn:hover {
+  transform: rotateX(-90deg);
+}
+
+.front {
+  color: white;
+  font-size: 20px;
+  background: none;
+  border: none;
+  height: 200px;
+  transform: translateZ(10px);
+}
+.back {
+  color: white;
+  font-size: 20px;
+  background: none;
+  border: none;
+  height: 150px;
+  transform: rotateX(90deg) translateZ(180px);
+}
+/* 폰트 불러오기 */
+@font-face {
+  font-family: "san"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("HSSantokki-Regular.ttf") format("opentype"); /* 폰트파일 불러오기 */
+}
+
+* {
+  font-family: "san";
+}
