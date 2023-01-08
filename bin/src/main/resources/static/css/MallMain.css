@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+body {background-color:transparent;}
+
+#searchbar {text-align:center;}
+
+#nca {color: black; text-align:center;
+margin-left:auto; margin-right:auto;
+border-spacing:40px;
+padding : 0px;}
+
+#daggori {text-align:center;}

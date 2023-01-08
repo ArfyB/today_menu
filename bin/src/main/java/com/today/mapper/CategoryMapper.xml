@@ -18,11 +18,7 @@
     	>
 		SELECT * FROM category
 		</select>
-
-		    <select id="clist"
-       resultType="com.today.vo.Category">
-        SELECT * FROM category
-        </select>
+		
 </mapper>
 		
 <!--     	

@@ -1,31 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-        <mapper namespace="com.today.mapper.CategoryMapper">
-        
-          <select id="CategoryList"
-       resultType="com.today.vo.Category">
-        SELECT * FROM category
+        <mapper namespace="com.today.mapper.UserMapper">
+          <select id="list" 
+       resultType="com.today.vo.User">
+        SELECT * FROM emp2
     	</select>
     	
-    	 <select id="ProductList"
-    	 parameterType="String"
-       resultType="com.today.vo.Product">
-       SELECT * FROM product WHERE type =  #{type}
-       </select>
-       
-    	<select id="a"
-    	>
-		SELECT * FROM category
-		</select>
-
-		    <select id="clist"
-       resultType="com.today.vo.Category">
-        SELECT * FROM category
-        </select>
-</mapper>
-		
-<!--     	
+    	
      <select id = "listByDeptno"
         parameterType="Integer"
         resultType="com.ezen.demo.vo.Emp">
@@ -51,6 +33,7 @@
          </update>
 </mapper>
 
+<!--
         <select id="list" 
        resultType="com.ezen.spring.web.vo.Emp">
         SELECT * FROM emp2

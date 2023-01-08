@@ -16,4 +16,5 @@ private String coo;
 private String weight;
 private String type;
 private String brand;
+private String ca;
 }
