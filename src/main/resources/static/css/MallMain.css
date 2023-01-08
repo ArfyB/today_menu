@@ -4,6 +4,16 @@ body {background-color:transparent;}
 
 #searchbar {text-align:center;}
 
+#category{-webkit-appearance: none;  /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+    text-align:center;
+    width:50px;
+    height:30px;}
+
+#find {width:400px; height:30px; text-align:center;}
+
+
 #nca {color: black; text-align:center;
 margin-left:auto; margin-right:auto;
 border-spacing:40px;

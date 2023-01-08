@@ -48,12 +48,12 @@ function changecategory()
 
 <div id="searchbar"><!-- 검색바 -->
 <select id='category' name='category' onchange='changecategory()'>
-<option value='name'>이름</option>
+<option value='name'>전체</option>
 <span th:each="n : ${list}">
 	<option>[[${n.name}]]</option>
 </span>
 </select>
-<span id='find'><input type='text' name='name'></span>
+<span id='find'><input id='find' type='text' name='name'></span>
 <button type='submit'>검색</button>
 </div>
 </form>
@@ -62,7 +62,7 @@ function changecategory()
 <table id='nca'><!-- 카테고리 표 -->
 <tr>
 <span th:each="n : ${list}" id='category'>
-	<td><a th:href="@{'/mall/detail/'+${n.ca} }">[[${n.name}]]</a></td>
+	<td><a th:href="@{'/mall/clist/'+${n.ca} }">[[${n.name}]]</a></td>
 </span>
 </tr>
 <tr>

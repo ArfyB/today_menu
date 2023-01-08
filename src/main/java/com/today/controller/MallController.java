@@ -41,6 +41,12 @@ public class MallController
     	m.addAttribute("clist",svc.clist());
     	return "thymeleaf/mall/clist";
     }
+    
+    @RequestMapping("/add")
+    public String productadd(Model m) 
+    {
+        return "thymeleaf/mall/ProductAdd";
+    }
     /*
     @PostMapping("/login")
     @ResponseBody
