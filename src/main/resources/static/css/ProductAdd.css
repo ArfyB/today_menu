@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+#addform {
+	width:350px;
+	margin:auto;
+	border:1px solid black;
+	border-radius:15px;
+}
+
+.input {
+	margin-top:10px;
+	margin-bottom:10px;
+	}
+	
+.text {
+	text-align:left;
+	
+}
