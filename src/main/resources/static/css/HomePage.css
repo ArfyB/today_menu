@@ -80,7 +80,7 @@ body {
 /* 폰트 불러오기 */
 @font-face {
   font-family: "san"; /* 사용하고 싶은 font-family명을 지정 */
-  src: url("HSSantokki-Regular.ttf") format("opentype"); /* 폰트파일 불러오기 */
+  src: url("../pont/HSSantokki-Regular.ttf") format("opentype"); /* 폰트파일 불러오기 */
 }
 
 * {
