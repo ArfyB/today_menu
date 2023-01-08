@@ -26,4 +26,9 @@ public class MallService
 		List<Product> plist = mapper.ProductList();
 		return plist;
 	}
+	public List<Category> clist()
+	{
+		List<Category> clist = mapper.clist();
+		return clist;
+	}
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+function CateList()
+{
+
+}
+</script>
+</head>
+<body>
+<table id='nca'><!-- 카테고리 표 -->
+<tr>
+<span th:each="n : ${clist}" id='category'>
+	<td><a th:href="@{'/mall/clist/'+${n.ca} }">[[${n.name}]]</a></td>
+</span>
+</tr>
+<tr>
+<span th:each="n : ${clist}">
+<!-- <a th:href="@{'/mall/detail/'+${n.ca} }"><img th:src="@{'/pics/'+${n.ca}+'.jpg'}"></a> -->
+	<td>[[${n.name}]]</td>
+</span>
+</tr>
+</table>
+
+</body>
+</html>
