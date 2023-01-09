@@ -20,6 +20,7 @@ function productadd()
        success : function(res)
        {
           alert(res.added?'추가 성공':'추가 실패');
+          if(res.added) location.href='main';
        },
        error(xhr, status, err)
        {
@@ -33,8 +34,7 @@ function productadd()
 <form id='add' name='add'>
 <div id='addform'>
 <div><span class='text'>이름</span><input class='input' type='text' name='name'></div>
-<input type='hidden' name='num' value='0'>
-<div>가격<input type='text' name='price'></div>
+<div>가격<input type='text' name='price'>원</div>
 <div>원산지<input type='text' name='coo'></div>
 <div>중량<input type='text' name='weight'></div>
 <div>브랜드<input type='text' name='brand'></div>
