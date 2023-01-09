@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+<script src="js/vendor/modernizr-3.8.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="@{/js/vendor/jquery-3.4.1.min.js}"><\/script>')</script>
+<head>
+	<meta charset="UTF-8">
+	<title>상세보기</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<style>
+	h2{boarder:1px; text-align: center;}	
+</style>
+<body>
+ <h2>게시글 상세 화면</h2>
+  <div class="container">  
+     	<p>글번호 : [[${board.num}]]</p>
+     	<p id="title"> 제목 : [[${board.title}]]</p>
+       	<p>작성자 : [[${board.author}]]</p>
+       	<p>조회수 : [[${board.hitcnt}]]</p>
+       	<p>작성일 : [[${board.createdDate}]]</p>
+       	<p>수정일 : [[${board.updatedDate}]]</p>
+     <div id="contents"> 	
+      	<p>내용 : 
+      	<textarea readonly="readonly" class="form-control" th:text="${board.contents}">
+      	</textarea>
+     </div>  
+	<div>      
+        <a href="list" class="btn" id="list">목록으로</a>
+   		<button type="submit" id="updateBtn" class="btn">수정</button>
+        <button id="deleteBtn" class="btn">삭제</button>
+        <form id="form" th:action="@{/}" method="post">
+        </form>
+ 	</div>
+  </div>
+<div class="container">
+	 <form method="POST" onsubmit="return updateComment(event)" id="insertC">
+      <table>
+        <tr>
+          <td colspan="2">
+           	<textarea id="content" placeholder="댓글 입력" name="content"></textarea>
+          </td>
+           <td><input type="button" onclick="return updateComment(event)" value="댓글작성"></td>
+        </tr>    
+      </table>    
+     </form>
+<div id="commentTable">
+	<div th:if="${#cLists.size(List)} > 0" th:each="cList:${cList}">
+	<form method="POST">      
+        <div th:text="${cList.content}"></div>           
+            <span><button type="submit" name="submit" value="update">수정</button></span>           
+            <span><button type="submit" name="submit" value="delete">삭제</button></span>
+        <div th:unless="${#cLists.size(List)} > 0">
+          <h3>댓글이 없습니다.</h3>
+        </div>    
+        </form>
+    	</div>
+	</div>	
+</div>
+    	
+ 
+<script th:inline="javascript">
+ $(document).on('ready', function(e) 
+{	 
+	 var form = $("#form");
+	 var num = [[${board.num}]];
+	 $(document).on('click', '#deleteBtn', function(e)
+	{
+		 $('#form').attr("action","delete");
+		 form.append("<input type='hidden' name='num' value='"+num+"'>");
+		 form.append("<input type='hidden' name='_method' value='delete'>");
+		 form.submit();
+	 })
+	 
+	 $(document).on('click', '#updateBtn', function(e)
+	{
+		 var str ="<input class='form-control' width='550'" +
+		 		"placeholder='제목 입력' id='updateTitle'>";
+		 $('#title').html(str);
+		 str="<textarea class='form-control' placeholder='내용 입력'" + 
+		 		"id = 'updateContents'></textarea>";
+		 $("#contents").html(str);
+		 $("#updateBtn").attr("id", "updateConfirmBtn");
+	 })
+	 ;
+	 $(document).on('click', '#updateConfirmBtn', function(e)
+	{
+		 $('#form').attr("action","update");
+		 var updateTitle= $('#updateTitle').val();
+		 var updateContents= $('#updateContents').val();
+		 form.append("<input type='hidden' name='num' value='"+num+"'>");
+		 form.append("<input type='hidden' name='_method' value='put'>");
+		 form.append("<input type='hidden' name='title' value='"+updateTitle+"'>");
+		 form.append("<input type='hidden' name='contents' value='"+updateContents+"'>");
+		 form.submit();
+	 })
+ })
+ </script> 
+</body>
+</html>

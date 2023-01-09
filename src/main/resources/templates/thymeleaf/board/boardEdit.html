@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>수정</title>
+	<link rel="stylesheet" th:href="@{/css/board.css}"/>
+</head>
+<style>
+    .layout 
+    {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .layout input 
+    {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top; 10dpx;
+
+    }
+
+    .layout textarea
+    {
+        width: 100%;
+        margin-top: 10px;
+        min-height: 300px;
+    }
+</style>
+<body>
+<div class="layout">
+    <form id="update-form"  th:action="@{/board/updateBoard/{num}(num=${board.num})}" method="post" th:onsubmit='return update()'>
+        <input name="title" type="text" th:value="${board.title}">
+        <input type="hidden" name="_method" value="updateBoard"/>
+        <input type="hidden" id="num" th:value="${board.num}" />        
+        <textarea name="contents" th:text="${board.contents}"></textarea>
+        <button class="btn" type="submit">수정</button>
+    </form>
+</div>
+</body>
+</html>
