@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.today.service.MallService;
 import com.today.vo.Product;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -62,25 +65,19 @@ public class MallController
     	return map;
     }
     
-    
-    /*
-    @PostMapping("/login")
-    @ResponseBody
-    public Map<String, Object> userid(String uid, HttpSession session)
-    {
-    	Map<String, Object> map = new HashMap<>();
-    	session.setAttribute("uid", uid);
-    	
-    	log.info((String)session.getAttribute("로그 : uid	"));
-    	
-    	map.put("uid", uid);
-    	
-    	return map;
-    }
-    
-    @RequestMapping(value = "/chat", method = RequestMethod.GET)
-    public String chat(Locale locale, Model model) {
-        return "thymeleaf/chat";
-    }
-    */
+    @PostMapping("/upload")
+	   public String upload(@RequestParam("files")MultipartFile[] mfiles,
+	                     HttpServletRequest request,
+	                     Product pro) 
+	   {
+		 Map<String, Object> map = new HashMap<>();
+		 
+		 map.put("mfiles", mfiles);
+		 map.put("request", request);
+		 map.put("product", pro);
+		 
+		 svc.addPA(map);
+		 
+		 return "/board/boardList";
+	   }
 }

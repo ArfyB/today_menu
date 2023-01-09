@@ -22,7 +22,7 @@
        resultType="com.today.vo.Category">
         SELECT * FROM category
         </select>
-        
+     <!--    
         <insert id="ProductAdd"
         parameterType="com.today.vo.Product">
         INSERT INTO product (num, count, name, price, coo, weight, brand, expire, ca, type)
@@ -39,8 +39,41 @@
         #{type}
         )
         </insert>
-        
-        
+     -->
+        <insert id="ProductAdd"
+       parameterType="com.today.vo.Product">
+       
+       <!-- Board.num 에 시퀀스 값을 보관해서 사용할 필요가 있다면 아래처럼...
+      <selectKey keyProperty="num" resultType="integer" order="BEFORE">
+          SELECT BOARD_SEQ.NEXTVAL FROM DUAL
+      </selectKey>
+      보드다음 숫자를 board객체의 num이라는 이름으로 저장
+      위의 내용을 사용시 아래의 num은 #{num}으로 넣기
+       -->
+	    INSERT INTO product (num, count, name, price, coo, weight, brand, expire, ca, type)
+        values(
+        PRO_SEQ.NEXTVAL,
+        #{count},
+        #{name},
+        #{price},
+        #{coo},
+        #{weight},
+        #{brand},
+        #{expire},
+        #{ca},
+        #{type}
+        )
+    </insert>
+    
+     <update id="ProPicAdd" parameterType="list">
+       INSERT INTO ProductPic (num, pnum, fname)
+       SELECT PPIC_SEQ.NEXTVAL AS num, t.* FROM
+       (
+           <foreach collection="list" item="item" index="index" separator="union all">
+                SELECT (SELECT MAX(num) FROM product) AS pnum, #{item.fname} FROM DUAL
+           </foreach>
+       ) t
+   </update>
         
         
         
