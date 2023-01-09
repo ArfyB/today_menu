@@ -18,7 +18,7 @@ function handleClick(event) {
 
 function removedActive() {
   signUpBox.classList.remove("active");
-  signUpBox.innerHTML = `<i class="material-icons">create</i>`;
+  signUpBox.innerHTML = `<i class="material-icons">+</i>`;
 }
 function handleSignUp() {
   let signUpBoxActive = document.querySelector(".active");

@@ -2,16 +2,42 @@
 
 body {background-color:transparent;}
 
-#searchbar {text-align:center;}
+#searchbar{
+		position : relative;
+	
+}
 
-#category{-webkit-appearance: none;  /* 네이티브 외형 감추기 */
-    -moz-appearance: none;
-    appearance: none;
-    text-align:center;
-    width:50px;
-    height:30px;}
-
-#find {width:400px; height:30px; text-align:center;}
+ #dropdown { width: 30px;     /* customize Select tag(DropDown options) with id="alphalist" */
+	             display: inline-block;
+             background-color: #F5F5F5;
+             border-radius: 10px;
+             outline: none;
+             transition: all .5s ease;
+             position: relative;
+             vertical-align: center;
+             font-size: 15px;
+             color: black;
+             height: 30px;
+    		position : absolute;
+           } 
+.btn1{
+		position : absolute;
+		left : 1000px
+}
+ input { border: 0;
+         background-color: #F5F5F5;
+         border-radius: 10px;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         -ms-appearance: none;
+         -o-appearance: none;
+         appearance: none;
+         text-align: left;
+         width: 1000px;
+         height: 32px;        
+    	position : absolute;
+	
+       }
 
 
 #nca {color: black; text-align:center;

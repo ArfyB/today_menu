@@ -11,17 +11,9 @@ body {
   /* 전체페이지 비율에 꽉 맞게*/
   background-size: cover;
   background-position: center center;
+  margin: auto;
   width: 100vw;
   height: 100vh;
-}
-
-.btn1 {
-  background: none;
-  position: absolute;
-  top: 500px;
-  left: 30px;
-  border: none;
-  width: 400px;
 }
 
 .btn1:hover,
@@ -30,30 +22,38 @@ body {
   border: 5px solid greenyellow;
   border-radius: 15px;
 }
+.btn1 {
+  background: none;
+  border: none;
+  width: 20vw;
+  height: 15vh;
+  margin-top: 600px;
+  margin-left: 100px;
+}
 
 .btn2 {
   background: none;
-  position: absolute;
-  top: 500px;
-  left: 570px;
   border: none;
-  width: 400px;
+  width: 20vw;
+  height: 15vh;
+  margin-top: 500px;
+  margin-left: 200px;
 }
 .btn3 {
   background: none;
-  position: absolute;
-  top: 500px;
-  right: 30px;
   border: none;
-  width: 400px;
+  width: 20vw;
+  height: 15vh;
+  margin-top: 500px;
+  margin-left: 200px;
 }
 
 .flip-btn {
-  width: 200px;
+  width: 10vw;
+  height: 15vh;
+  margin-left: 1700px;
   transform-style: preserve-3d;
   transition: 0.5s;
-  position: absolute;
-  right: 0px;
 }
 
 /*마우스를 올리면*/
@@ -80,7 +80,7 @@ body {
 /* 폰트 불러오기 */
 @font-face {
   font-family: "san"; /* 사용하고 싶은 font-family명을 지정 */
-  src: url("../pont/HSSantokki-Regular.ttf") format("opentype"); /* 폰트파일 불러오기 */
+  src: url("HSSantokki-Regular.ttf") format("opentype"); /* 폰트파일 불러오기 */
 }
 
 * {

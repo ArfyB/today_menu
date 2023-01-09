@@ -21,9 +21,11 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: var(--padding);
-  background-color: #c4dfff;
+  background-color: #2bdd80;
 }
-
+.box input:focus{
+	outline:solid red;
+}
 .box input,
 .box button {
   padding: 15px;
@@ -34,9 +36,7 @@ body {
 .box input {
   margin-bottom: 25px;
 }
-.box input:focus {
-  border: 2px solid red;
-}
+
 .box button {
   background-color: #ffe4c4;
   color: #547fb2;
@@ -64,6 +64,7 @@ body {
 .sign-up-box i {
   font-size: 1.9em;
   color: #fff;
+  font-style: normal;
 }
 .sign-up-box.active {
   top: 0;
@@ -79,6 +80,7 @@ body {
   cursor: default;
   border-radius: 50px;
 }
+
 
 .sign-up-box.active input,
 .sign-up-box.active button {
