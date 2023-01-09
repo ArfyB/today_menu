@@ -9,12 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Product
 {
-private String name;
 private int num;
-private String expire;
+private int count;
+private String name;
+private String price;
 private String coo;
 private String weight;
-private String type;
 private String brand;
+private java.sql.Date expire;
 private String ca;
+private String type;
 }
