@@ -13,18 +13,13 @@ function CateList()
 </script>
 </head>
 <body>
-<table id='cd'><!-- 카테고리 표 -->
-<tr>
-<span th:each="n : ${clist}" id='category'>
-	<td><a th:href="@{'/mall/clist/'+${n.ca} }">[[${n.name}]]</a></td>
-</span>
-</tr>
-<tr>
-<span th:each="n : ${clist}">
-<!-- <a th:href="@{'/mall/detail/'+${n.ca} }"><img th:src="@{'/pics/'+${n.ca}+'.jpg'}"></a> -->
-	<td>[[${n.name}]]</td>
-</span>
-</tr>
-</table>
+<input type="checkbox" id="menuicon">
+<label for ="menuicon">
+<span></span>
+<span></span>
+<span></span>
+</label>
+<div class="sidebar">
+</div>
 </body>
 </html>
