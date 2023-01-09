@@ -12,4 +12,9 @@ public class MainController
 	{
 		return "thymeleaf/home/HomePage";
 	}
+	@RequestMapping("/LoginForm")
+	public String loginform()
+	{
+		return "thymeleaf/home/LoginForm";
+	}
 }
