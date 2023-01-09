@@ -14,8 +14,7 @@
        SELECT * FROM product WHERE type =  #{type}
        </select>
        
-    	<select id="a"
-    	>
+    	<select id="a">
 		SELECT * FROM category
 		</select>
 
@@ -23,6 +22,16 @@
        resultType="com.today.vo.Category">
         SELECT * FROM category
         </select>
+        
+        <select id='ProductAdd'
+         >
+        INSERT INTO product (name, price, expire, coo, weight, type, brand, num, ca, count)
+        </select>
+        
+        
+        
+        
+        
 </mapper>
 		
 <!--     	

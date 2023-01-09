@@ -13,6 +13,7 @@ public interface CategoryMapper
 	public List<Category> CategoryList();
 	public List<Product> ProductList();
 	public List<Category> clist();
+	public List<Product> ProductAdd();
 }
 
 

@@ -47,6 +47,8 @@ public class MallController
     {
         return "thymeleaf/mall/ProductAdd";
     }
+    
+    
     /*
     @PostMapping("/login")
     @ResponseBody
