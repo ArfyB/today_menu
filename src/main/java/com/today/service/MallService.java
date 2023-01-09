@@ -31,4 +31,11 @@ public class MallService
 		List<Category> clist = mapper.clist();
 		return clist;
 	}
+	
+	public boolean ProductAdd(Product pro)
+	{
+		boolean added = 0<mapper.ProductAdd(pro);
+		return added;
+	}
+
 }

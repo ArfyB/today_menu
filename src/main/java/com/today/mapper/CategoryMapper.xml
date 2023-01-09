@@ -23,10 +23,22 @@
         SELECT * FROM category
         </select>
         
-        <select id='ProductAdd'
-         >
-        INSERT INTO product (name, price, expire, coo, weight, type, brand, num, ca, count)
-        </select>
+        <insert id="ProductAdd"
+        parameterType="com.today.vo.Product">
+        INSERT INTO product (num, count, name, price, coo, weight, brand, expire, ca, type)
+        values(
+        PRO_SEQ.NEXTVAL,
+        #{count},
+        #{name},
+        #{price},
+        #{coo},
+        #{weight},
+        #{brand},
+        #{expire},
+        #{ca},
+        #{type}
+        )
+        </insert>
         
         
         
