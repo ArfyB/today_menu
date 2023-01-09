@@ -47,14 +47,17 @@ function changecategory()
 <body>
 
 <div id="searchbar"><!-- 검색바 -->
-<select id='category' name='category' onchange='changecategory()'>
+
+<select class='dropdown' name='category' onchange='changecategory()'>
 <option value='name'>전체</option>
 <span th:each="n : ${list}">
 	<option>[[${n.name}]]</option>
 </span>
 </select>
-<span id='find'><input id='find' type='text' name='name'></span>
-<button type='submit'>검색</button>
+
+<span class='find'><input id='find' type='text' name='name'></span>
+<button class ='btn1' type='submit'>검색</button>
+
 </div>
 </form>
 <hr>
