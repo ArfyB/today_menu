@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<link rel="stylesheet" th:href="@{/css/clist.css}"/>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
 function CateList()
@@ -12,7 +13,7 @@ function CateList()
 </script>
 </head>
 <body>
-<table id='nca'><!-- 카테고리 표 -->
+<table id='cd'><!-- 카테고리 표 -->
 <tr>
 <span th:each="n : ${clist}" id='category'>
 	<td><a th:href="@{'/mall/clist/'+${n.ca} }">[[${n.name}]]</a></td>
@@ -25,6 +26,5 @@ function CateList()
 </span>
 </tr>
 </table>
-
 </body>
 </html>
