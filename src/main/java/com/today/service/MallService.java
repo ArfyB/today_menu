@@ -48,6 +48,12 @@ public class MallService
 		List<Category> clist = mapper.clist();
 		return clist;
 	}
+	public List<Category> CdList(String ca)
+	{
+		List<Category> CdList = mapper.CdList(ca);
+
+		return CdList;
+	}
 	
 	public boolean ProductAdd(Product pro)
 	{
