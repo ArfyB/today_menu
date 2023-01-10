@@ -85,7 +85,6 @@ public class MallService
    	      try 
    	      {
    			absolutePath = resource.getFile().getAbsolutePath();
-   			
    	      } 
    	      
    	      catch (IOException e1) 
@@ -95,8 +94,6 @@ public class MallService
 	      
 	      try 
 	      {
-	    	  int a = mapper.ProductAdd(pro);
-	    	  
 	    	  if(mfiles.length != 0)
 	    	  {
 	    		  
@@ -113,7 +110,10 @@ public class MallService
 	            
 	            list.add(pp);
 	         }
+	         
+	         int a = mapper.ProductAdd(pro);
 	         int b = mapper.ProPicAdd(list);
+	         
 	         }
 	    	  
 	         return true;
