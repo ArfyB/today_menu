@@ -19,4 +19,7 @@ private String brand;
 private java.sql.Date expire;
 private String ca;
 private String type;
+private String id;
+private String pdpic;
+private String ppic;
 }

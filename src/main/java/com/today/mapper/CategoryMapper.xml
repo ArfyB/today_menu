@@ -5,7 +5,7 @@
         
           <select id="CategoryList"
        resultType="com.today.vo.Category">
-        SELECT * FROM category
+        SELECT DISTINCT ca, name FROM category
     	</select>
     	
     	 <select id="ProductList"
@@ -74,6 +74,12 @@
            </foreach>
        ) t
    </update>
+   
+   <select id="getProduct"
+   parameterType="com.today.vo.Product"
+   resultType="com.today.vo.Product">
+	Select * From product where num = #{num} 
+   </select>
         
         
         

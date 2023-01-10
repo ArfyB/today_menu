@@ -16,6 +16,7 @@ public interface CategoryMapper
 	public List<Category> clist();
 	public int ProductAdd(Product pro);
 	public int ProPicAdd(List<ProductPic> list);
+	public Product getProduct(Product pro);
 }
 
 
