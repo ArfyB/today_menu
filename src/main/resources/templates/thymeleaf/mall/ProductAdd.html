@@ -45,15 +45,15 @@ $('#btnUpload').on('click', function(event) {
         enctype: 'multipart/form-data',
         url: "/mall/upload",
         data: data,
-        dataType: 'text',     /* text, json, script, html, xml 등 */
+        dataType: 'json',     /* text, json, script, html, xml 등 */
         processData: false,   /* 디폴트인 Query String 변환 하지 않도록 설정 */
         contentType: false,   /* 디폴트 "application/x-www-form-urlencoded; charset=UTF-8" */
         cache: false,
         timeout: 600000,      /* 시간 제한 없음 */
         success: function (res) {
            $('#btnUpload').prop('disabled', false);
-           alert('success')
-           location.href = "/board/list/1/1";
+           alert(res);
+           alert(res.added?"a":"b");
         },
         error: function (e) {
             $('#btnUpload').prop('disabled', false);
@@ -68,6 +68,7 @@ $('#btnUpload').on('click', function(event) {
 <form id='uploadForm' name='add'>
 <div id='addform'>
 <div><span class='text'>이름</span><input class='input' type='text' name='name'></div>
+<input type="hidden" name="num" value="0">
 <div>가격<input type='text' name='price'>원</div>
 <div>원산지<input type='text' name='coo'></div>
 <div>중량<input type='text' name='weight'></div>

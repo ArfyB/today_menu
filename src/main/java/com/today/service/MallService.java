@@ -1,11 +1,15 @@
 package com.today.service;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.taglibs.standard.extra.spath.AbsolutePath;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,10 +20,15 @@ import com.today.vo.ProductPic;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class MallService 
 {
+	@Autowired
+	ResourceLoader resourceLoader; 
+	
 	@Autowired
 	public CategoryMapper mapper;
 	
@@ -46,7 +55,7 @@ public class MallService
 		return added;
 	}
 	
-	public String addPA(Map map)
+	public boolean addPA(Map map)
 	{
 		
 		MultipartFile[] mfiles = (MultipartFile[]) map.get("mfiles");
@@ -54,10 +63,35 @@ public class MallService
 		Product pro = (Product) map.get("product");
 		
 		ServletContext context = request.getServletContext();
-	      String savePath = context.getRealPath("/WEB-INF/files");
-	      System.out.println(savePath);
-	      //request.getSession().getServletContext().getRealPath("/");
+		
+	      /*
+	      Resource resource = resourceLoader.getResource("classpath:/static");
+	      try 
+	      {
+			String absolutePath = resource.getFile().getAbsolutePath();
+			System.out.println("스태틱" + absolutePath);
+	      } 
+	      
+	      catch (IOException e1) 
+	      {
+			e1.printStackTrace();
+	      }
+	      */
+	      
 	      List<ProductPic> list = new ArrayList<>();
+	      String absolutePath="";
+	      
+	      Resource resource = resourceLoader.getResource("classpath:/static");
+   	      try 
+   	      {
+   			absolutePath = resource.getFile().getAbsolutePath();
+   			
+   	      } 
+   	      
+   	      catch (IOException e1) 
+   	      {
+   			e1.printStackTrace();
+   	      }
 	      
 	      try 
 	      {
@@ -68,33 +102,31 @@ public class MallService
 	    		  
 	         for(int i=0;i<mfiles.length;i++) 
 	         {
+	        	 System.out.println("스태틱" + absolutePath+"/pics"+mfiles[i].getOriginalFilename());
 	            mfiles[i].transferTo(
-	            new File(savePath+"/"+mfiles[i].getOriginalFilename()));
-	            
-	            String fname = mfiles[i].getOriginalFilename();
+	            new File(absolutePath+"/pics/"+mfiles[i].getOriginalFilename()));
 	            
 	            ProductPic pp = new ProductPic();
 	            pp.setFname(mfiles[i].getOriginalFilename());
 	            
+	            System.out.println(pp);
+	            
 	            list.add(pp);
-	            /* MultipartFile 주요 메소드
-	            String cType = mfiles[i].getContentType();
-	            String pName = mfiles[i].getName();
-	            Resource res = mfiles[i].getResource();
-	            long fSize = mfiles[i].getSize();
-	            boolean empty = mfiles[i].isEmpty();
-	            */
 	         }
 	         int b = mapper.ProPicAdd(list);
 	         }
 	    	  
-	         String msg = String.format("보드%d att", a);
-	         return msg;
+	         return true;
 	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
-	         return "파일 저장 실패:";
+	         return false;
 	      }
 	} 
+	
+	public Product getProduct(Product pro)
+	{
+		return mapper.getProduct(pro);
+	}
 
 }

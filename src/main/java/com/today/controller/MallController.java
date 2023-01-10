@@ -35,13 +35,14 @@ public class MallController
     	m.addAttribute("list",svc.CategoryList());
         return "thymeleaf/mall/MallMain";
     }
-    
+    /*
     @GetMapping("/detail/{ca}")
     @ResponseBody
     public String MallDetail(@PathVariable("ca")String ca)
     {
     	return ca;
     }
+    */
     @RequestMapping("/clist/{ca}")
     public String CateList(Model m)
     {
@@ -66,7 +67,8 @@ public class MallController
     }
     
     @PostMapping("/upload")
-	   public String upload(@RequestParam("files")MultipartFile[] mfiles,
+    @ResponseBody
+	   public Map<String, Object> upload(@RequestParam("files")MultipartFile[] mfiles,
 	                     HttpServletRequest request,
 	                     Product pro) 
 	   {
@@ -76,8 +78,18 @@ public class MallController
 		 map.put("request", request);
 		 map.put("product", pro);
 		 
-		 svc.addPA(map);
+		 Map<String, Object> added = new HashMap<>();
+		 added.put("added", svc.addPA(map));
 		 
-		 return "/board/boardList";
+		 return added;
 	   }
+    
+    @GetMapping("/detail") // 리스트에서 제품클릭시에 해당 제품의 num 보내줄것 = 제품고유번호 
+    public String getProduct(Product pro, Model m)
+    {
+    	m.addAttribute("product",svc.getProduct(pro));
+    	System.out.println("가져온 정보"+svc.getProduct(pro));
+    	
+    	return "thymeleaf/mall/ProductDetail";
+    }
 }
