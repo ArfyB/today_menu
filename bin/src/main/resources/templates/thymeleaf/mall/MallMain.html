@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title></title>
-</head>
 <link rel="stylesheet" th:href="@{/css/MallMain.css}"/>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
@@ -44,17 +43,21 @@ function changecategory()
 }
 </script>
  -->
+ </head>
 <body>
 
 <div id="searchbar"><!-- 검색바 -->
-<select id='category' name='category' onchange='changecategory()'>
-<option value='name'>이름</option>
+
+<select class='dropdown' name='category' onchange='changecategory()'>
+<option value='name'>전체</option>
 <span th:each="n : ${list}">
 	<option>[[${n.name}]]</option>
 </span>
 </select>
-<span id='find'><input type='text' name='name'></span>
-<button type='submit'>검색</button>
+
+<span class='find'><input id='find' type='text' name='name'></span>
+<button class ='btn1' type='submit'>검색</button>
+
 </div>
 </form>
 <hr>
@@ -62,7 +65,7 @@ function changecategory()
 <table id='nca'><!-- 카테고리 표 -->
 <tr>
 <span th:each="n : ${list}" id='category'>
-	<td><a th:href="@{'/mall/detail/'+${n.ca} }">[[${n.name}]]</a></td>
+	<td><a th:href="@{'/mall/clist/'+${n.ca} }">[[${n.name}]]</a></td>
 </span>
 </tr>
 <tr>

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.today.service.MallService;
+import com.today.vo.Category;
 import com.today.vo.Product;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -44,11 +45,13 @@ public class MallController
     }
     */
     @RequestMapping("/clist/{ca}")
-    public String CateList(Model m)
+    public String CateList(Model m,@PathVariable("ca") String ca)
     {
     	m.addAttribute("clist",svc.clist());
+    m.addAttribute("CdList",svc.CdList(ca));
     	return "thymeleaf/mall/clist";
     }
+    
     
     @RequestMapping("/add")
     public String productadd(Model m) 
