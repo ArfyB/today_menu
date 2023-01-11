@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" th:href="@{/css/LoginForm.css}" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="box" id="bx">
-      <form action="file:///C:/Users/sn072/Desktop/%EC%83%88%20%ED%8F%B4%EB%8D%94/%EB%A9%94%EC%9D%B8/MainPage.html">
-        <input type="text" placeholder="아이디" />
-        <input type="password" placeholder="비밀번호" />
-        <input type="text" placeholder="이름" />
-        <input type="email" placeholder="Email" />
-        <button type="submit" class="btn">로그인</button>
+      <form id='userdata'>
+        <input class='userdata' type="text" placeholder="아이디" id='userid'/>
+        <input type="password" placeholder="비밀번호" id='pwd'/>
+        <input type="text" placeholder="닉네임" id='nickname'/>
+        <input type="email" placeholder="Email" id='email'/>
+        <button type="button" id='loginbtn' class="btn">로그인</button>
       </form>
       <div class="sign-up-box">
         <i class="material-icons">+</i>
