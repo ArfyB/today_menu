@@ -17,9 +17,10 @@ function CateList()
 <label for ="menuicon">
 </label>
 <div class="sidebar">
-<span th:each="c : ${CdList}">
 <button type="button">뒤로가기</button>
-<a href="thymeleaf/mall/clist/{ca}"></a>
+<span th:each="c : ${CdList}">
+
+
 <table border="1">
 <tr>
 <td>[[${c.cd}]]</td>
@@ -28,8 +29,8 @@ function CateList()
 </table>
 </div>
 <table border="1">
-<span th:each="c : ${CdList}">
-<td>[[${c.name}]]</td>
+<span th:each="n : ${getN}">
+<td>[[${n.name}]]</td>
 </span>
 </table>
 <P>
