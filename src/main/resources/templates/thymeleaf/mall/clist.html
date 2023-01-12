@@ -23,6 +23,13 @@ function CateList()
 </div>
 <span th:each="c : ${CdList}">
 <td>[[${c.name}]]</td>
+<P>
+<p>
+<p>
+<span th:each="p : ${Product}">
+<td>[[${p.ppic}]]</td>
+<td>[[${p.price}]]</td>
+<td>[[${p.name}]]</td>
 </span>
 </body>
 </html>
