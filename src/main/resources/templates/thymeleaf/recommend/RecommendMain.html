@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>▒메뉴추천▒</title>
+</head>
+<body>
+ <h1>[[${username}]]님 오늘의 추천 메뉴는 oo입니다!</h1>
+ <input type='button' value='새메뉴 추천받기'/>
+ <p>
+ 	<p>
+ 	
+ 		<from action=''>
+ 		<input type='button' value='메뉴게임'/> <input type='button' value='추천목록'/> <input type='button' value='유행하는메뉴'/>
+ 		</from>
+ 			
+ 			<div class="menu_wrap">
+ 				<div class="menu_div">
+ 				</div>
+ 					<div class="menu_div">
+ 					<c:menu_photo items="${menu}" var="menu">
+ 						<a href="">
+ 							<div class="menu_div_content">
+ 								<div class="image_wrap">
+ 							</div>
+ 						</a>
+ 					</div>
+ 			</div>
+</body>
+</html>
