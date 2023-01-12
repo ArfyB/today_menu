@@ -36,7 +36,17 @@ public class BoardController
     	return new HiddenHttpMethodFilter();
     }
     
+    @RequestMapping("/main")
+    public String boardMain()
+    {
+    	return "thymeleaf/board/foodMain";
+    }
     
+    @RequestMapping("/menu")
+    public String boardMenu()
+    {
+    	return "thymeleaf/board/foodMenu";
+    }
     
     @RequestMapping("/list")
     public ModelAndView openBoardList()
