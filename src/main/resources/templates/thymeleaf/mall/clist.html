@@ -15,21 +15,49 @@ function CateList()
 <body>
 <input type="checkbox" id="menuicon">
 <label for ="menuicon">
-
 </label>
 <div class="sidebar">
 <span th:each="c : ${CdList}">
+<button type="button">뒤로가기</button>
+<a href="thymeleaf/mall/clist/{ca}"></a>
+<table border="1">
+<tr>
 <td>[[${c.cd}]]</td>
+</tr>
+</span>
+</table>
 </div>
+<table border="1">
 <span th:each="c : ${CdList}">
 <td>[[${c.name}]]</td>
+</span>
+</table>
 <P>
 <p>
 <p>
-<span th:each="p : ${Product}">
+<p>
+<p>
+<p>
+<p>
+<p>
+<p>
+<p>
+<p>
+
+<table border="1">
+<span th:each="p : ${ProductD}">
+
+<tr>
 <td>[[${p.ppic}]]</td>
+</tr>
+<tr>
 <td>[[${p.price}]]</td>
+</tr>
+<tr>
 <td>[[${p.name}]]</td>
+</tr>
+
 </span>
+</table>
 </body>
 </html>

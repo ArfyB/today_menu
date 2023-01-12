@@ -6,19 +6,19 @@
           <select id="CategoryList"
        resultType="com.today.vo.Category">
         SELECT DISTINCT ca, name FROM category
-    	</select>
-    	
-    	 <select id="ProductList"
-    	 parameterType="String"
+       </select>
+       
+        <select id="ProductList"
+        parameterType="String"
        resultType="com.today.vo.Product">
        SELECT * FROM product WHERE type =  #{type}
        </select>
        
-    	<select id="a">
-		SELECT * FROM category
-		</select>
+       <select id="a">
+      SELECT * FROM category
+      </select>
 
-		    <select id="clist"
+          <select id="clist"
        resultType="com.today.vo.Category">
         SELECT * FROM category
         </select>
@@ -27,6 +27,12 @@
             parameterType="String"
        resultType="com.today.vo.Category">
         SELECT * FROM category WHERE ca =  #{ca}
+        </select>
+        
+           <select id="ProductD"
+            parameterType="String"
+       resultType="com.today.vo.Product">
+     SELECT name, ppic, price FROM product WHERE ca =  #{ca}
         </select>
      <!--    
         <insert id="ProductAdd"
@@ -56,7 +62,7 @@
       보드다음 숫자를 board객체의 num이라는 이름으로 저장
       위의 내용을 사용시 아래의 num은 #{num}으로 넣기
        -->
-	    INSERT INTO product (num, count, name, price, coo, weight, brand, expire, ca, type, pdpic)
+       INSERT INTO product (num, count, name, price, coo, weight, brand, expire, ca, type, pdpic)
         values(
         PRO_SEQ.NEXTVAL,
         #{count},
@@ -86,14 +92,14 @@
    <select id="getProduct"
    parameterType="com.today.vo.Product"
    resultType="com.today.vo.Product">
-	Select * From product where num = #{num} 
+   Select * From product where num = #{num} 
    </select>
         
         
         
 </mapper>
-		
-<!--     	
+      
+<!--        
      <select id = "listByDeptno"
         parameterType="Integer"
         resultType="com.ezen.demo.vo.Emp">
