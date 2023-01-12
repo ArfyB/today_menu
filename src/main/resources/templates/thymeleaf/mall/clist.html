@@ -46,9 +46,8 @@ function CateList()
 
 <table border="1">
 <span th:each="p : ${ProductD}">
-
 <tr>
-<td>[[${p.ppic}]]</td>
+<td><img th:src="@{'/pics/'+ ${p.ppic} }"></td>
 </tr>
 <tr>
 <td>[[${p.price}]]</td>
