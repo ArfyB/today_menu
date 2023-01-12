@@ -28,8 +28,8 @@ function CateList()
 </table>
 </div>
 <table border="1">
-<span th:each="c : ${CdList}">
-<td>[[${c.name}]]</td>
+<span th:each="n : ${getN}">
+<td>[[${n.name}]]</td>
 </span>
 </table>
 <P>

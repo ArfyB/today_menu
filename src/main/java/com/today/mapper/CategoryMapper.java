@@ -19,6 +19,7 @@ public interface CategoryMapper
 	public Product getProduct(Product pro);
 	public List<Category> CdList(String ca);
 	public List<Product> ProductD(String ca);
+	public List<Product> getN(String ca);
 
 }
 

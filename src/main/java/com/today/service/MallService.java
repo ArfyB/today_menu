@@ -60,6 +60,12 @@ public class MallService
 
       return ProductD;
    }
+   public List<Product> getN(String ca)
+   {
+      List<Product> getN = mapper.getN(ca);
+
+      return getN;
+   }
    public boolean ProductAdd(Product pro)
    {
       boolean added = 0<mapper.ProductAdd(pro);

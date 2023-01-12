@@ -34,6 +34,13 @@
        resultType="com.today.vo.Product">
      SELECT name, ppic, price FROM product WHERE ca =  #{ca}
         </select>
+        
+   <select id="getN"
+            parameterType="String"
+       resultType="com.today.vo.Category">
+        SELECT distinct(name) FROM category WHERE ca =  #{ca}
+        </select>
+
      <!--    
         <insert id="ProductAdd"
         parameterType="com.today.vo.Product">

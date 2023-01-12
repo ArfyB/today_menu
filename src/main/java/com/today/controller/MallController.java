@@ -50,6 +50,7 @@ public class MallController
        m.addAttribute("clist",svc.clist());
     m.addAttribute("CdList",svc.CdList(ca));
     m.addAttribute("ProductD",svc.ProductD(ca));
+    m.addAttribute("getN",svc.getN(ca));
        return "thymeleaf/mall/clist";
     }
     
