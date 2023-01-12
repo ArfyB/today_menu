@@ -15,11 +15,14 @@ function CateList()
 <body>
 <input type="checkbox" id="menuicon">
 <label for ="menuicon">
+
 </label>
 <div class="sidebar">
-</div>
 <span th:each="c : ${CdList}">
 <td>[[${c.cd}]]</td>
+</div>
+<span th:each="c : ${CdList}">
+<td>[[${c.name}]]</td>
 </span>
 </body>
 </html>
