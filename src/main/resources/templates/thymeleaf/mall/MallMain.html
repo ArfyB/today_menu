@@ -64,15 +64,31 @@ function changecategory()
 
 <table id='nca'><!-- 카테고리 표 -->
 <tr>
-<span th:each="n : ${list}" id='category'>
-	<td><a th:href="@{'/mall/clist/'+${n.ca} }">[[${n.name}]]</a></td>
-</span>
+<td><a href="/mall/clist/meat">축산</a></td>
+<td><a href="/mall/clist/fish">수산</a></td>
+<td><a href="/mall/clist/rice">쌀</a></td>
+<td><a href="/mall/clist/veg">채소</a></td>
+<td><a href="/mall/clist/fruit">과일</a></td>
+<td><a href="/mall/clist/milk">유제품</a></td>
+<td><a href="/mall/clist/sauce">조미료</a></td>
+<td><a href="/mall/clist/drink">음료</a></td>
+<td><a href="/mall/clist/ramen">라면</a></td>
+<td><a href="/mall/clist/snack">과자</a></td>
+<td><a href="/mall/clist/pf">가공식품</a></td>
+
 </tr>
 <tr>
-<span th:each="n : ${list}">
-<!-- <a th:href="@{'/mall/detail/'+${n.ca} }"><img th:src="@{'/pics/'+${n.ca}+'.jpg'}"></a> -->
-	<td>[[${n.name}]]</td>
-</span>
+<td>축산</td>
+<td>수산</td>
+<td>쌀</td>
+<td>채소</td>
+<td>과일</td>
+<td>유제품</td>
+<td>조미료</td>
+<td>음료</td>
+<td>라면</td>
+<td>과자</td>
+<td>가공식품</td>
 </tr>
 </table>
 

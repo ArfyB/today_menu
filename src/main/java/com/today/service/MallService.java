@@ -99,36 +99,29 @@ public class MallService
          String absolutePath="";
          
          Resource resource = resourceLoader.getResource("classpath:/static");
-            try 
-            {
-            absolutePath = resource.getFile().getAbsolutePath();
-            } 
-            
-            catch (IOException e1) 
-            {
-            e1.printStackTrace();
-            }
          
          try 
          {
+        	 absolutePath = resource.getFile().getAbsolutePath();
             if(mfiles.length != 0)
             {
                
             for(int i=0;i<mfiles.length;i++) 
             {
-               System.out.println("스태틱" + absolutePath+"/pics"+mfiles[i].getOriginalFilename());
+               System.out.println("스태틱  " + absolutePath + "/pics/" + mfiles[i].getOriginalFilename());
                mfiles[i].transferTo(
                new File(absolutePath+"/pics/"+mfiles[i].getOriginalFilename()));
                
                ProductPic pp = new ProductPic();
                pp.setFname(mfiles[i].getOriginalFilename());
+               pro.setPpic(mfiles[i].getOriginalFilename());
                
-               System.out.println(pp);
                
                list.add(pp);
             }
             
             int a = mapper.ProductAdd(pro);
+            System.out.println(list.get(0));
             int b = mapper.ProPicAdd(list);
             
             }
