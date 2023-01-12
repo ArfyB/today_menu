@@ -62,7 +62,7 @@
       보드다음 숫자를 board객체의 num이라는 이름으로 저장
       위의 내용을 사용시 아래의 num은 #{num}으로 넣기
        -->
-       INSERT INTO product (num, count, name, price, coo, weight, brand, expire, ca, type, pdpic)
+       INSERT INTO product (num, count, name, price, coo, weight, brand, expire, ca, type, ppic)
         values(
         PRO_SEQ.NEXTVAL,
         #{count},
@@ -74,7 +74,7 @@
         #{expire},
         #{ca},
         #{type},
-        #{pdpic}
+        #{ppic}
         )
     </insert>
     
