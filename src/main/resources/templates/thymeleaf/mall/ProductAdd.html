@@ -52,8 +52,8 @@ $('#btnUpload').on('click', function(event) {
         timeout: 600000,      /* 시간 제한 없음 */
         success: function (res) {
            $('#btnUpload').prop('disabled', false);
-           alert(res);
-           alert(res.added?"a":"b");
+           alert(res.added?"성공":"실패");
+          if(res.added) location.href='/mall/main';
         },
         error: function (e) {
             $('#btnUpload').prop('disabled', false);
