@@ -26,14 +26,14 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/mall")
 public class MallController
 {
-	@Autowired
-	private MallService svc;
-	
+   @Autowired
+   private MallService svc;
+   
     @RequestMapping("/main")
     public String main(Model m) 
     {
-    	//m.addAttribute("name","dlfma");
-    	m.addAttribute("list",svc.CategoryList());
+       //m.addAttribute("name","dlfma");
+       m.addAttribute("list",svc.CategoryList());
         return "thymeleaf/mall/MallMain";
     }
     /*
@@ -41,15 +41,16 @@ public class MallController
     @ResponseBody
     public String MallDetail(@PathVariable("ca")String ca)
     {
-    	return ca;
+       return ca;
     }
     */
     @RequestMapping("/clist/{ca}")
     public String CateList(Model m,@PathVariable("ca") String ca)
     {
-    	m.addAttribute("clist",svc.clist());
+       m.addAttribute("clist",svc.clist());
     m.addAttribute("CdList",svc.CdList(ca));
-    	return "thymeleaf/mall/clist";
+    m.addAttribute("ProductD",svc.ProductD(ca));
+       return "thymeleaf/mall/clist";
     }
     
     
@@ -63,36 +64,36 @@ public class MallController
     @ResponseBody
     public Map<String,Object> add(Product pro)
     {
-    	Map<String,Object> map = new HashMap<>();
-    	boolean added = svc.ProductAdd(pro);
-    	map.put("added", added);
-    	return map;
+       Map<String,Object> map = new HashMap<>();
+       boolean added = svc.ProductAdd(pro);
+       map.put("added", added);
+       return map;
     }
     
     @PostMapping("/upload")
     @ResponseBody
-	   public Map<String, Object> upload(@RequestParam("files")MultipartFile[] mfiles,
-	                     HttpServletRequest request,
-	                     Product pro) 
-	   {
-		 Map<String, Object> map = new HashMap<>();
-		 
-		 map.put("mfiles", mfiles);
-		 map.put("request", request);
-		 map.put("product", pro);
-		 
-		 Map<String, Object> added = new HashMap<>();
-		 added.put("added", svc.addPA(map));
-		 
-		 return added;
-	   }
+      public Map<String, Object> upload(@RequestParam("files")MultipartFile[] mfiles,
+                        HttpServletRequest request,
+                        Product pro) 
+      {
+       Map<String, Object> map = new HashMap<>();
+       
+       map.put("mfiles", mfiles);
+       map.put("request", request);
+       map.put("product", pro);
+       
+       Map<String, Object> added = new HashMap<>();
+       added.put("added", svc.addPA(map));
+       
+       return added;
+      }
     
     @GetMapping("/detail") // 리스트에서 제품클릭시에 해당 제품의 num 보내줄것 = 제품고유번호 
     public String getProduct(Product pro, Model m)
     {
-    	m.addAttribute("product",svc.getProduct(pro));
-    	System.out.println("가져온 정보"+svc.getProduct(pro));
-    	
-    	return "thymeleaf/mall/ProductDetail";
+       m.addAttribute("product",svc.getProduct(pro));
+       System.out.println("가져온 정보"+svc.getProduct(pro));
+       
+       return "thymeleaf/mall/ProductDetail";
     }
 }

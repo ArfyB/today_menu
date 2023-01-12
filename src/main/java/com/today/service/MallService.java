@@ -26,113 +26,118 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MallService 
 {
-	@Autowired
-	ResourceLoader resourceLoader; 
-	
-	@Autowired
-	public CategoryMapper mapper;
-	
-	public List<Category> CategoryList()
-	{
-		List<Category> list = mapper.CategoryList();
-		return list;
-	}
-	
-	public List<Product> plist()
-	{
-		List<Product> plist = mapper.ProductList();
-		return plist;
-	}
-	public List<Category> clist()
-	{
-		List<Category> clist = mapper.clist();
-		return clist;
-	}
-	public List<Category> CdList(String ca)
-	{
-		List<Category> CdList = mapper.CdList(ca);
+   @Autowired
+   ResourceLoader resourceLoader; 
+   
+   @Autowired
+   public CategoryMapper mapper;
+   
+   public List<Category> CategoryList()
+   {
+      List<Category> list = mapper.CategoryList();
+      return list;
+   }
+   
+   public List<Product> plist()
+   {
+      List<Product> plist = mapper.ProductList();
+      return plist;
+   }
+   public List<Category> clist()
+   {
+      List<Category> clist = mapper.clist();
+      return clist;
+   }
+   public List<Category> CdList(String ca)
+   {
+      List<Category> CdList = mapper.CdList(ca);
 
-		return CdList;
-	}
-	
-	public boolean ProductAdd(Product pro)
-	{
-		boolean added = 0<mapper.ProductAdd(pro);
-		return added;
-	}
-	
-	public boolean addPA(Map map)
-	{
-		
-		MultipartFile[] mfiles = (MultipartFile[]) map.get("mfiles");
-		HttpServletRequest request = (HttpServletRequest) map.get("request");
-		Product pro = (Product) map.get("product");
-		
-		ServletContext context = request.getServletContext();
-		
-	      /*
-	      Resource resource = resourceLoader.getResource("classpath:/static");
-	      try 
-	      {
-			String absolutePath = resource.getFile().getAbsolutePath();
-			System.out.println("스태틱" + absolutePath);
-	      } 
-	      
-	      catch (IOException e1) 
-	      {
-			e1.printStackTrace();
-	      }
-	      */
-	      
-	      List<ProductPic> list = new ArrayList<>();
-	      String absolutePath="";
-	      
-	      Resource resource = resourceLoader.getResource("classpath:/static");
-   	      try 
-   	      {
-   			absolutePath = resource.getFile().getAbsolutePath();
-   	      } 
-   	      
-   	      catch (IOException e1) 
-   	      {
-   			e1.printStackTrace();
-   	      }
-	      
-	      try 
-	      {
-	    	  if(mfiles.length != 0)
-	    	  {
-	    		  
-	         for(int i=0;i<mfiles.length;i++) 
-	         {
-	        	 System.out.println("스태틱" + absolutePath+"/pics"+mfiles[i].getOriginalFilename());
-	            mfiles[i].transferTo(
-	            new File(absolutePath+"/pics/"+mfiles[i].getOriginalFilename()));
-	            
-	            ProductPic pp = new ProductPic();
-	            pp.setFname(mfiles[i].getOriginalFilename());
-	            
-	            System.out.println(pp);
-	            
-	            list.add(pp);
-	         }
-	         
-	         int a = mapper.ProductAdd(pro);
-	         int b = mapper.ProPicAdd(list);
-	         
-	         }
-	    	  
-	         return true;
-	         
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	         return false;
-	      }
-	} 
-	
-	public Product getProduct(Product pro)
-	{
-		return mapper.getProduct(pro);
-	}
+      return CdList;
+   }
+   public List<Product> ProductD(String ca)
+   {
+      List<Product> ProductD = mapper.ProductD(ca);
+
+      return ProductD;
+   }
+   public boolean ProductAdd(Product pro)
+   {
+      boolean added = 0<mapper.ProductAdd(pro);
+      return added;
+   }
+   
+   public boolean addPA(Map map)
+   {
+      
+      MultipartFile[] mfiles = (MultipartFile[]) map.get("mfiles");
+      HttpServletRequest request = (HttpServletRequest) map.get("request");
+      Product pro = (Product) map.get("product");
+      
+      ServletContext context = request.getServletContext();
+      
+         /*
+         Resource resource = resourceLoader.getResource("classpath:/static");
+         try 
+         {
+         String absolutePath = resource.getFile().getAbsolutePath();
+         System.out.println("스태틱" + absolutePath);
+         } 
+         
+         catch (IOException e1) 
+         {
+         e1.printStackTrace();
+         }
+         */
+         
+         List<ProductPic> list = new ArrayList<>();
+         String absolutePath="";
+         
+         Resource resource = resourceLoader.getResource("classpath:/static");
+            try 
+            {
+            absolutePath = resource.getFile().getAbsolutePath();
+            } 
+            
+            catch (IOException e1) 
+            {
+            e1.printStackTrace();
+            }
+         
+         try 
+         {
+            if(mfiles.length != 0)
+            {
+               
+            for(int i=0;i<mfiles.length;i++) 
+            {
+               System.out.println("스태틱" + absolutePath+"/pics"+mfiles[i].getOriginalFilename());
+               mfiles[i].transferTo(
+               new File(absolutePath+"/pics/"+mfiles[i].getOriginalFilename()));
+               
+               ProductPic pp = new ProductPic();
+               pp.setFname(mfiles[i].getOriginalFilename());
+               
+               System.out.println(pp);
+               
+               list.add(pp);
+            }
+            
+            int a = mapper.ProductAdd(pro);
+            int b = mapper.ProPicAdd(list);
+            
+            }
+            
+            return true;
+            
+         } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+         }
+   } 
+   
+   public Product getProduct(Product pro)
+   {
+      return mapper.getProduct(pro);
+   }
 
 }

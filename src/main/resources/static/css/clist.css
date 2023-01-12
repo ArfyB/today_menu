@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body {background-color:#ddd;}
+body {background-color:#eee;}
 
 input[id="menuicon"] {diplay:none;}
 input[id="menuicon"] + label {dipslay:block;margin:30px;width:60px;height:50px;position:relative;cursor:pointer;}
@@ -9,10 +9,10 @@ input[id="menuicon"] + label span:nth-child(1) {top:0;}
 input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:trasnslatey(-50%);}
 input[id="menuicon"] + label span:nth-child(3) {bottom:0;}
 input[id="menuicon"] :checked+ label{z-index:2;}
-input[id="menuicon"] :checked+ label span{background:#ddd;}
+input[id="menuicon"] :checked+ label span{background:#eee;}
 input[id="menuicon"]:checked+ label span:nth-child(1) {top:50%;transform:translatey(-50%) rotate(45deg);}
 input[id="menuicon"]:checked+ label span:nth-child(2) {opacity:0;}
 input[id="menuicon"]:checked+ label span:nth-child(3) {bottom:50%;transform:translatey(50%) roatate(-45deg);}
 
-div[class="sidebar"] {width:300px;height:100%;background:#eee;position:fixed;top:0;left:-300px;z-index:1;transition:all .35s;}
+div[class="sidebar"] {width:300px;height:100%;background:#ddd;position:fixed;top:0;left:-300px;z-index:1;transition:all .35s;}
 input[id="menuicon"]:checked +label +div{left:0;}
