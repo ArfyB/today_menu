@@ -74,7 +74,7 @@ public class MallController
     @PostMapping("/upload")
     @ResponseBody
       public Map<String, Object> upload(@RequestParam("files")MultipartFile[] mfiles,
-                        HttpServletRequest request,
+                        HttpServletRequest request,				
                         Product pro) 
       {
        Map<String, Object> map = new HashMap<>();
