@@ -32,7 +32,7 @@
            <select id="ProductD"
             parameterType="String"
        resultType="com.today.vo.Product">
-     SELECT name, ppic, price FROM product WHERE ca =  #{ca}
+     SELECT name, ppic, price, num FROM product WHERE ca =  #{ca}
         </select>
         
    <select id="getN"

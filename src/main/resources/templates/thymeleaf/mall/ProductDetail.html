@@ -7,15 +7,18 @@
 <link rel="stylesheet" th:href="@{/css/style.css}">
 <body>
 <div class="grid1">
-<div class="grid2">제품 이름</div><!-- name -->
-<div class="grid3">제품 사진</div><!-- ppic -->
-<div class="grid4">제품 가격</div><!-- price -->
+<div class="grid2">[[${product.name}]]</div><!-- name -->
+<div class="grid3"><img th:src="@{'/pics/'+ ${product.ppic} }" width='200' height='200'></div><!-- ppic -->
+<div class="grid4">[[${product.price}]]</div><!-- price -->
 <div>5</div>
 <div>6</div>
 <div>7</div>
 <div>구매수량 조절</div><!-- count -->
-<div>장바구니 담기</div><!-- 장바구니담기 -->
-<div>구매버튼 or 비로그인시 로그인후 이용</div><!-- 구매 -->
+<div><button type='button'>장바구니 담기</button></div><!-- 장바구니담기 -->
+<div><button type='button'>구매버튼 or 비로그인시 로그인후 이용</button></div><!-- 구매 -->
+</div>
+<button type='button'>상세정보 추가	</button>
+<div id=''>
 </div>
 <div class="grid11">11</div>
 [[${product}]]

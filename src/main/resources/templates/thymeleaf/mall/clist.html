@@ -43,11 +43,15 @@ function CateList()
 <p>
 <p>
 <p>
-
 <table border="1">
 <span th:each="p : ${ProductD}">
+
 <tr>
-<td><img th:src="@{'/pics/'+ ${p.ppic} }"></td>
+<td>
+<a th:href="@{'/mall/detail?num='+${p.num}}">
+<img th:src="@{'/pics/'+ ${p.ppic} }" width='200' height='200'>
+</a>
+</td>
 </tr>
 <tr>
 <td>[[${p.price}]]</td>
@@ -55,8 +59,11 @@ function CateList()
 <tr>
 <td>[[${p.name}]]</td>
 </tr>
-
+<tr>
+<td>[[${p.num}]]</td>
+</tr>
 </span>
 </table>
+
 </body>
 </html>
