@@ -17,6 +17,7 @@ public interface CategoryMapper
 	public int ProductAdd(Product pro);
 	public int ProPicAdd(List<ProductPic> list);
 	public Product getProduct(Product pro);
+	public Product getProductd(Product pro);	//
 	public List<Category> CdList(String ca);
 	public List<Product> ProductD(String ca);
 	public List<Product> getN(String ca);

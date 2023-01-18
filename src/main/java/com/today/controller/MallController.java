@@ -95,6 +95,15 @@ public class MallController
        m.addAttribute("product",svc.getProduct(pro));
        System.out.println("가져온 정보"+svc.getProduct(pro));
        
+       return "thymeleaf/mall/MallDetail";
+    }
+    
+    @GetMapping("/pdetail") // 리스트에서 제품클릭시에 해당 제품의 num 보내줄것 = 제품고유번호 
+    public String getProduc(Product pro, Model m)
+    {
+       m.addAttribute("product",svc.getProductd(pro));
+       System.out.println("가져온 정보"+svc.getProductd(pro));
+       
        return "thymeleaf/mall/ProductDetail";
     }
 }
