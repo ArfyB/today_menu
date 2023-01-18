@@ -138,5 +138,10 @@ public class MallService
    {
       return mapper.getProduct(pro);
    }
+   
+   public Product getProductd(Product pro)
+   {
+      return mapper.getProductd(pro);
+   }
 
 }

@@ -2,19 +2,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title></title>
 </head>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-<script>
-function CategoryDetail()
-{
-	
-	
-	
-}
-</script>
+<link rel="stylesheet" th:href="@{/css/MallDetail.css}">
 <body>
-
-
+<div class="grid1">
+<div class="grid2">[[${product.name}]]</div><!-- name -->
+<div class="grid3"><img th:src="@{'/pics/'+ ${product.ppic} }" width='200' height='200'></div><!-- ppic -->
+<div class="grid4">[[${product.price}]]</div><!-- price -->
+<div>5</div>
+<div>6</div>
+<div>7</div>
+<div>구매수량 조절</div><!-- count -->
+<div><button type='button'>장바구니 담기</button></div><!-- 장바구니담기 -->
+<div><button type='button'>구매버튼 or 비로그인시 로그인후 이용</button></div><!-- 구매 -->
+</div>
+<div id=''>
+</div>
+<div class="grid11">11</div>
+[[${product}]]
 </body>
 </html>
