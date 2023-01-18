@@ -2,17 +2,21 @@
 
 body {background-color:#eee;}
 
-input[id="menuicon"] {diplay:none;}
-input[id="menuicon"] + label {dipslay:block;margin:30px;width:60px;height:50px;position:relative;cursor:pointer;}
-input[id="menuicon"] + label  span {display:block;position:absoulte;width:100%;height:5px;border-radius:30px;background:#000;transition:all .35s;}
-input[id="menuicon"] + label span:nth-child(1) {top:0;}
-input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:trasnslatey(-50%);}
-input[id="menuicon"] + label span:nth-child(3) {bottom:0;}
-input[id="menuicon"] :checked+ label{z-index:2;}
-input[id="menuicon"] :checked+ label span{background:#eee;}
-input[id="menuicon"]:checked+ label span:nth-child(1) {top:50%;transform:translatey(-50%) rotate(45deg);}
-input[id="menuicon"]:checked+ label span:nth-child(2) {opacity:0;}
-input[id="menuicon"]:checked+ label span:nth-child(3) {bottom:50%;transform:translatey(50%) roatate(-45deg);}
+.side-nav {
+  width: 250px;
+  height: 100%;
+  background: wheat;
+  color: white;
+  padding: 25px;
+  /* 맨앞으로 고정 */
+  position: fixed;
+  text-align: right;
+  /* 첫화면에는 조금만 보이게끔 */
+  transform: translateX(-170px);
+}
 
-div[class="sidebar"] {width:300px;height:100%;background:#ddd;position:fixed;top:0;left:-300px;z-index:1;transition:all .35s;}
-input[id="menuicon"]:checked +label +div{left:0;}
+.side-nav:hover {
+  transform: translateX(0px);
+  text-align: center;
+  font-size: 30px;
+}
